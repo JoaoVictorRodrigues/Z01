@@ -9,4 +9,5 @@ entity DMux4Way is
 			q1:  out STD_LOGIC;
 			q2:  out STD_LOGIC;
 			q3:  out STD_LOGIC);
-end entity;
+end entity DMux4Way;
+

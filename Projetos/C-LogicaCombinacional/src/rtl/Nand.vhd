@@ -7,6 +7,7 @@ b : in std_logic;
 q : out std_logic
 );
 end nand_z01;
+
 architecture rtl of nand_z01 is
 begin
 q <= not (a and b);
