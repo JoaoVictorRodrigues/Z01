@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity Nor8Way is
-	port ( 
+	port (
 			a:   in  STD_LOGIC;
 			b:   in  STD_LOGIC;
 			c:   in  STD_LOGIC;
@@ -13,3 +13,7 @@ entity Nor8Way is
 			h:   in  STD_LOGIC;
 			q:   out STD_LOGIC);
 end entity;
+architecture rtl of Nor8Way is
+begin
+q <= not (a or b or c or d or e or f or g or h);
+end rtl;
