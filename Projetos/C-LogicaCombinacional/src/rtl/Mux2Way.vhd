@@ -8,4 +8,4 @@ entity Mux2Way is
 			b:   in  STD_LOGIC;
 			sel: in  STD_LOGIC;
 			q:   out STD_LOGIC);
-end entity;
+end Mux2Way;
