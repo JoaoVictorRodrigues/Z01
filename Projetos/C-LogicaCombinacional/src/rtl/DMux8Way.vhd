@@ -19,15 +19,6 @@ architecture rtl of DMux8Way is
 
 begin
 
-a <= q0 when sel = "000";
-a <= q1 when sel = "001";
-a <= q2 when sel = "010";
-a <= q3 when sel = "011";
-a <= q4 when sel = "100";
-a <= q5 when sel = "101";
-a <= q6 when sel = "110";
-a <= q7 when sel = "111";
-
-
+if sel = "000" a <= q0 else sel = "001" a <= q1 else sel = "010" a <= q2 else sel = "011" a <= q3 else sel = "100" a <= q4 else sel = "101" a <= q5 else sel = "110" a <= q6 else a <= q7;
 
 end rtl;
