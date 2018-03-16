@@ -15,10 +15,12 @@ entity Mux8Way is
 			q:   out STD_LOGIC);
 end entity;
 
+
 architecture rtl of Mux8Way is
 
 begin
 
 q <= a when sel = "000" else b when sel = "001" else c when sel = "010" else d when sel = "011" else e when sel = "100" else f when sel = "101" else g when sel = "110" else h;
 		 
+
 end rtl;

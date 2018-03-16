@@ -9,7 +9,7 @@ entity DMux2Way is
 			q1:  out STD_LOGIC);
 end entity;
 
-architecture Dmux2 of Dmux2way is
+  architecture Dmux2 of Dmux2way is
 begin
 process (a,sel) is
 begin
@@ -22,3 +22,4 @@ begin
 	end if;
 end process;
 end Dmux2;
+
