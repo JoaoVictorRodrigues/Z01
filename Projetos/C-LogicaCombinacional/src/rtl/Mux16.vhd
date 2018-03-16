@@ -1,42 +1,58 @@
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-entity Mux16 is
-    port (
-            a:   in  STD_LOGIC;
-            b:   in  STD_LOGIC;
-            c:   in  STD_LOGIC;
-            d:   in  STD_LOGIC;
-      		e:   in  STD_LOGIC;
-            f:   in  STD_LOGIC;
-            g:   in  STD_LOGIC;
-            h:   in  STD_LOGIC;
-      		i:   in  STD_LOGIC;
-            j:   in  STD_LOGIC;
-            k:   in  STD_LOGIC;
-            l:   in  STD_LOGIC;
-     		 m:   in  STD_LOGIC;
-            n:   in  STD_LOGIC;
-            o:   in  STD_LOGIC;
-            p:   in  STD_LOGIC;
-            sel: in  STD_LOGIC_VECTOR(15 downto 0);
-            q:   out STD_LOGIC);
-end Mux16;
-architecture rtl of Mux16 is
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+--  Uncomment the following lines to use the declarations that are
+--  provided for instantiating Xilinx primitive components.
+--library UNISIM;
+--use UNISIM.VComponents.all
+
+entity mux161 is
+    Port ( x : in std_logic_vector(15 downto 0);
+           s : in std_logic_vector(3 downto 0);
+           y : out std_logic);
+end mux161;
+
+architecture mux of mux161 is
+
 begin
-q   <=  a when sel = "0000" else
-        b when sel = "0001" else
-        c when sel = "0010" else
-        d when sel = "0011" else
-        e when sel = "0100" else
-        f when sel = "0101" else
-        g when sel = "0110" else
-        h when sel = "0111" else
-        i when sel = "1000" else
-	    j when sel = "1001" else
-        k when sel = "1010" else
-        l when sel = "1011" else
-        m when sel = "1100" else
-        n when sel = "1101" else
-        o when sel = "1110" else
-        p;
-end rtl;
+    process(x,s)
+    begin
+    if(s="0000")then
+    y<=x(0);
+     elsif(s="0001")then
+    y<=x(1);
+      elsif(s="0010")then
+    y<=x(2);
+      elsif(s="0011")then
+    y<=x(3);
+      elsif(s="0100")then
+    y<=x(4);
+      elsif(s="0101")then
+    y<=x(5);
+  elsif(s="0110")then
+    y<=x(6);
+      elsif(s="0111")then
+    y<=x(7);
+      elsif(s="1000")then
+    y<=x(8);
+        elsif(s="1001")then
+    y<=x(9);
+       elsif(s="1010")then
+    y<=x(10);
+   elsif(s="1011")then
+    y<=x(11);
+   elsif(s="1100")then
+    y<=x(12);
+    elsif(s="1101")then
+    y<=x(13);
+  elsif(s="1110")then
+    y<=x(14);
+  else
+  y<=x(15);
+  end if ;
+  end process ;
+end mux;
+
